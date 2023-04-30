@@ -1,4 +1,5 @@
+from engine import TicTacToe
 from gui import Display
 
-
-display = Display()
+game = TicTacToe()
+display = Display(game=game)

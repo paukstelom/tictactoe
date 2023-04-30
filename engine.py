@@ -24,11 +24,9 @@ class TicTacToe:
             if position == chosen_move:
                 self.mark_square(position)
 
-            if self.check_if_won():
-                print(f'Player {self.turn} wins!')
-
-            else:
-                self.change_turn()
+        if self.check_if_won():
+            print(f'Player {self.turn} wins!')
+        self.change_turn()
 
     def change_turn(self) -> None:
         if self.turn == 'X':
@@ -47,6 +45,6 @@ class TicTacToe:
         for combo in winning_combinations:
             if all(position in self.x_positions for position in combo):
                 return True
-            elif all(position in self.x_positions for position in combo):
+            elif all(position in self.o_positions for position in combo):
                 return True
         return False
